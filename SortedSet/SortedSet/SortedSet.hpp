@@ -8,29 +8,31 @@
 
 #pragma once
 #include<iostream>
-#include <vector>
+#include "utils.hpp"
 
 using namespace std;
 
 
 typedef int TE;
+
+
 class SortedSet {
     
-    vector<TE> set;
+    Vector<TE> set;
     
 public:
     
     bool isEmpty() {
-        if( set.size() == 0)
+        if( set.getSize() == 0)
             return true;
         return false;
     }
     
     long getLength() {
-        return set.size();
+        return set.getSize();
     }
     
-    int findElement (TE& el){
+    long findElement (TE& el){
         
         for(int i = 0; i< this->getLength(); i++){
             if ( set[i] == el)
@@ -46,27 +48,27 @@ public:
         if(this->findElement(el) != -1)
             return;
         
-        
+        /*
         if( this->isEmpty()){
             set.push_back(el);
             return;
         }
-         
+         */
         
         long pos = 0;
         
-        while(set[pos] < el && pos < set.size() )
+        while(set[pos] < el && pos < set.getSize() )
             pos++;
 
         set.push_back(0);
-        for( long i = set.size(); i >= pos; i--)
+        for( long i = set.getSize(); i >= pos; i--)
             set[i+1] = set[i];
         set[pos] = el;
     }
     
     void removeElement(TE el){
         long pos = this->findElement(el);
-        set.erase(set.begin() + pos);
+        set.remove(pos);
     }
     
     void clear() {

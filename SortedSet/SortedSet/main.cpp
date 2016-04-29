@@ -21,11 +21,14 @@ int main() {
     s.addElement(100);
     s.addElement(900);
     s.addElement(4);
+    s.addElement(-1);
+    s.addElement(100);
     s.print();
     
     cout<<endl;
     cout<<"After deleting"<<endl;
-    s.removeElement(100);
+    s.removeElement(2);
+    s.addElement(34);
     s.print();
     
     cout<<endl;
@@ -42,5 +45,10 @@ int main() {
     s.clear();
     s.print();
     cout<<"Done cleaning"<<endl;
+    
+    s.addElement(13);
+    s.print();
+    
+    
     return 0;
 }

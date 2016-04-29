@@ -10,6 +10,6 @@
 
 
 void SortedSet::print() {
-    for( auto i : set )
-        cout<<i<<" ";
+    for( int i=0; i<set.getSize(); i++ )
+        cout<<set[i]<<" ";
 }
